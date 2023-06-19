@@ -1,3 +1,17 @@
-paint for 32x32 ppm files.
+paint for ppm images.
 
+run:
+  $ schemer run
+
+Controls:
+  u - undo
+  s - save to image.ppm
+  c - change color
+  q - quit
+
+requirements:
+  https://github.com/krzysckh/schemer
+
+references:
+  https://netpbm.sourceforge.net/doc/ppm.html
 
