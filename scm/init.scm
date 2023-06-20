@@ -5,9 +5,6 @@
 
 (define image-size 16)
 
-(set-window-size win-scale win-scale)
-(set-window-option '(noresizable))
-
 (define pixel-size (/ (get-window-width) image-size))
 
 (use "scm/paint.scm")
@@ -15,6 +12,8 @@
 
 (define on-load
   (lambda ()
+    (set-window-size win-scale win-scale)
+    (set-window-option '(noresizable))
     (create-click-map
       (lambda (x y c)
         `(set-color-by-pos ,x ,y ',current-color)))))

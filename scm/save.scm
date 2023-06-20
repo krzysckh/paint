@@ -9,6 +9,6 @@
                                (number->string 255) "\n")))
     (for-each-pixel every-pos
                     (lambda (x y)
-                      (print "")
-                      (for-each (lambda (z) (print z) (display z of) (newline of))
+                      (for-each (lambda (z)
+                                  (display z of) (newline of))
                                 (get-color-by-pos x y))))))
