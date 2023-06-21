@@ -1,7 +1,10 @@
 paint for ppm images.
 
 run:
-  $ schemer run
+  $ make run
+build:
+  $ make
+  $ ./paint
 
 Controls:
   u - undo
