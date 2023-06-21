@@ -2,6 +2,7 @@
 (use "colors")
 
 (define win-scale 640)
+(set-window-option '(noresizable))
 
 (define image-size 16)
 
@@ -13,7 +14,6 @@
 (define on-load
   (lambda ()
     (set-window-size win-scale win-scale)
-    (set-window-option '(noresizable))
     (create-click-map
       (lambda (x y c)
         `(set-color-by-pos ,x ,y ',current-color)))))
