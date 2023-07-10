@@ -28,10 +28,19 @@
   (lambda (x y)
     (list-ref canvas (+ (* y image-size) x))))
 
+(define canv-eq? ; HACK: why doesn't equal? just work?
+  (lambda (a b)
+    (not (> (sum (map (lambda (x y) (if (equal? x y) 0 1)) a b)) 0))))
+
 (define set-color-by-pos
   (lambda (x y c)
-    (set! history (append history `(,canvas)))
-    (set! canvas (set-nth canvas (+ (* y image-size) x) c)))) ; muh mutable
+    (define new-canvas (set-nth canvas (+ (* y image-size) x) c))
+    (if (eq? (last history) #f)
+      (set! history (list canvas)))
+    (if (not (canv-eq? (last history) new-canvas))
+      (begin
+        (set! history (append history `(,new-canvas)))
+        (set! canvas new-canvas))))) ; muh mutable
 
 (define undo
   (lambda ()
