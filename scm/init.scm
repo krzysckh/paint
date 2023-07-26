@@ -24,5 +24,8 @@
     (if (is-key-pressed "c") (color-chooser))
     (if (is-key-pressed "s") (save-image))
     (if (is-key-pressed "q") (set-window-option "nowindow"))
+
+    (set! mouse-holding #f)
+    ; HACK: because of ui.scm fuckery (which DOES NOT work yet)
     (handle-click)
     (render-paint)))
