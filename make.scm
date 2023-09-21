@@ -6,6 +6,9 @@
 (define-resource "scm/paint.scm")
 (define-resource "scm/save.scm")
 
-(set-executable-name "paint")
+(set-executable-name 'local "paint")
+(set-executable-name 'win64 "paint.exe")
+
+(set-target '(local win64))
 
 (make)

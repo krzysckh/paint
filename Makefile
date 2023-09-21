@@ -9,4 +9,4 @@ build:
 run:
 	$(SCHEMER) run
 clean:
-	rm -fr paint build/* image.ppm
+	rm -fr paint paint.exe build/* image.ppm
